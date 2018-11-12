@@ -79,15 +79,25 @@
 <?php
 if(isset($_POST['logup']))
 {
+
 	$conn=mysqli_connect("localhost","root","") or die("Could Not Connect");
-mysqli_select_db($conn,"Muzikk");
+	mysqli_select_db($conn,"music");
 $username=$_POST["username"];
 $password=$_POST["password"];
-$query="select * from register where username='$username' and password='$password'";
+$query="select * from users where username='$username' and password='$password'";
 $run=mysqli_query($conn,$query);
 if(mysqli_num_rows($run)==1)
 {
-	echo "<script>window.open('userhome.html','_self')</script>";
+	session_start();
+	$_SESSION["username"]=$username;
+	if($username=="admin")
+	{
+		echo "<script>window.open('admin_home.php','_self')</script>";
+	}
+	else
+	{
+	echo "<script>window.open('test3.php','_self')</script>";
+	}
 }
 else
 {
@@ -98,17 +108,17 @@ else if(isset($_POST['signin']))
 {
 	
 $conn=mysqli_connect("localhost","root","") or die("could not connect");
-mysqli_select_db($conn,"Muzikk")
-or mysqli_query($conn,"create database muzikk");
-mysqli_select_db($conn,"Muzikk");
+mysqli_select_db($conn,"music")
+or mysqli_query($conn,"create database music");
+mysqli_select_db($conn,"music");
 $name=$_POST["name"];
 $username=$_POST["username"];
 $email=$_POST["email"];
 $pass=$_POST["pass"];
 $conf=$_POST["confpass"];
 $gender=$_POST["gender"];
-$checkuser="select * from register where username='$username'";
-$checkemail="select * from register where email='$email'";
+$checkuser="select * from users where username='$username'";
+$checkemail="select * from users where email='$email'";
 $runuser=mysqli_query($conn,$checkuser);
 $runemail=mysqli_query($conn,$checkemail);
 $cntuser=mysqli_num_rows($runuser);
@@ -129,14 +139,14 @@ else
 {
   if($pass==$conf)
   {
-	 $sql="INSERT INTO register (name,username,email,password,gender) VALUES ('$name','$username','$email','$pass','$gender')";
+	 $sql="INSERT INTO users (name,username,email,password,gender) VALUES ('$name','$username','$email','$pass','$gender')";
 	 if (mysqli_query($conn,$sql))
 	 {
       echo "<script>alert('Registration succesful!');</script>";
     }
     else
     {
-   		$ql= "create table register(name VARCHAR(20),username VARCHAR(20),email VARCHAR(20),password VARCHAR(20),gender VARCHAR(20))";
+   		$ql= "create table users(name VARCHAR(20),username VARCHAR(20),email VARCHAR(20),password VARCHAR(20),gender VARCHAR(20))";
    		if(mysqli_query($conn,$ql))
    		{
     		if (mysqli_query($conn,$sql))
