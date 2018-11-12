@@ -1,0 +1,141 @@
+#navbar{
+    overflow: hidden;
+    background-color: black;
+    width: 100%;
+}
+#footer{
+    overflow: hidden;
+    background-image: linear-gradient(to right, rgb(132, 0, 116),rgb(0,0,0));
+}
+#logsign{
+    display: block;
+    float:right;
+    padding-top: 22px;
+    padding-right: 10px;
+}
+#logo
+{
+    display: block;
+    float:left;
+    margin:0;
+}
+a {
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+#logsign :hover{
+    color:#e70bff;
+}
+#backgroundimage
+{
+   left: 0;
+   margin: 0;
+   min-height: 100%;
+   padding: 0;
+   top: 0;
+   width: 100%;
+   z-index: -1;
+}
+#main{
+    margin: 0;
+    height: 573px;
+    width: 100%;
+    background-image: url("discovery.png"), linear-gradient(rgb(0,0,0), rgb(132, 0, 116));
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: 100%;
+}
+#footercontent{
+    display: block;
+    float:right;
+    padding-top: 22px;
+    padding-right: 10px;
+    margin-right: 100px;
+}
+#footercontent :hover{
+    color:#e70bff;
+}
+.fa {
+    padding: 20px;
+    font-size: 30px;
+    width: 25px;
+    text-align: center;
+    text-decoration: none;
+}
+.fa:hover {
+    color: #e70bff;
+}
+
+#modalbackground{
+     position: absolute; 
+     height:100%; 
+     width:100%; 
+     display:none;  
+    background-color: rgba(127, 127, 127, 0.63);
+}
+.up{
+    width: auto;
+    height: 500px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    background-image:linear-gradient(to right,#c0c0aa,#a3129e); 
+    border-radius: 10px;
+    padding: 82px 180px 33px 180px;
+    position: absolute;
+    text-align: center;
+    right: 400px;
+    left: 400px;
+    opacity: 1;
+}
+input[type=text] {
+    width: 100%;
+    font-size: 15px;
+    padding: 12px 20px;
+    margin: 8px 0;
+    color: black;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 2px solid black;
+    outline:none;
+    background:transparent;
+}
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: black;
+    opacity: 1; /* Firefox */
+}
+input[type=password] {
+    width: 100%;
+    font-size: 15px;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 2px solid black;
+    outline:none;
+    background:transparent;
+}
+input[type=email] {
+    width: 100%;
+    font-size: 15px;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 2px solid black;
+    outline:none;
+    background:transparent;
+}
+
+.button{
+    border: 2px solid black;
+    background-color: white;
+    color: black;
+    padding: 14px 28px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    background:transparent;
+    outline: none;
+}
