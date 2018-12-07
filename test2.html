@@ -1,0 +1,107 @@
+<html>
+<head>
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="jplayer/jquery.jplayer.min.js"></script>
+<link type="text/css" href="skin/blue.monday/css/jplayer.blue.monday.css" rel="stylesheet" />
+
+<script type="text/javascript">
+    /*$(document).ready(function(){
+      $("#jquery_jplayer_1").jPlayer({
+        ready: function () {
+          $(this).jPlayer("setMedia", {
+            title: "Bubble",
+            m4a: "http://www.jplayer.org/audio/m4a/Miaow-07-Bubble.m4a",
+            oga: "http://www.jplayer.org/audio/ogg/Miaow-07-Bubble.ogg"
+          });
+        },
+        cssSelectorAncestor: "#jp_container_1",
+        swfPath: "/js",
+        supplied: "m4a, oga",
+        useStateClassSkin: true,
+        autoBlur: false,
+        smoothPlayBar: true,
+        keyEnabled: true,
+        remainingDuration: true,
+        toggleDuration: true
+      });
+    });*/
+	
+	function change_song(song_title,song_url){
+		$("#jquery_jplayer_1").jPlayer({
+        ready: function () {
+          $(this).jPlayer("setMedia", {
+            title: song_title,
+            mp3: song_url
+          }).jPlayer("play",0);
+        },
+        cssSelectorAncestor: "#jp_container_1",
+        swfPath: "/js",
+        supplied: "mp3 ",
+        useStateClassSkin: true,
+        autoBlur: false,
+        smoothPlayBar: true,
+        keyEnabled: true,
+        remainingDuration: true,
+        toggleDuration: true
+      });
+	  $("#jquery_jplayer_1").jPlayer("setMedia", {
+            title: song_title,
+            mp3: song_url
+          }).jPlayer("play",0);
+	}
+	
+ </script>
+  
+</head>
+<body style='margin:0%;'>
+
+<div id="{{JPLAYER}}" class="jp-jplayer"></div>
+<div id="{{WRAPPER}}" class="jp-audio" role="application" aria-label="media player">
+	<div class="jp-type-playlist">
+		<div class="jp-gui jp-interface">
+			<div class="jp-volume-controls">
+				<button class="jp-mute" role="button" tabindex="0">mute</button>
+				<button class="jp-volume-max" role="button" tabindex="0">max volume</button>
+				<div class="jp-volume-bar">
+					<div class="jp-volume-bar-value"></div>
+				</div>
+			</div>
+			<div class="jp-controls-holder">
+				<div class="jp-controls">
+					<button class="jp-previous" role="button" tabindex="0">previous</button>
+					<button class="jp-play" role="button" tabindex="0">play</button>
+					<button class="jp-stop" role="button" tabindex="0">stop</button>
+					<button class="jp-next" role="button" tabindex="0">next</button>
+				</div>
+				<div class="jp-progress">
+					<div class="jp-seek-bar">
+						<div class="jp-play-bar"></div>
+					</div>
+				</div>
+				<div class="jp-current-time" role="timer" aria-label="time">&nbsp;</div>
+				<div class="jp-duration" role="timer" aria-label="duration">&nbsp;</div>
+				<div class="jp-toggles">
+					<button class="jp-repeat" role="button" tabindex="0">repeat</button>
+					<button class="jp-shuffle" role="button" tabindex="0">shuffle</button>
+				</div>
+			</div>
+		</div>
+		<div class="jp-playlist">
+			<ul>
+				<li>&nbsp;</li>
+			</ul>
+		</div>
+		<div class="jp-no-solution">
+			<span>Update Required</span>
+			To play the media you will need to either update your browser to a recent version or update your <a href="http://get.adobe.com/flashplayer/" target="_blank">Flash plugin</a>.
+		</div>
+	</div>
+</div>
+
+
+<button onclick="change_song('ThunderClouds','http://dl.newmusic3.pro/Music/Foreign/2018/August/09/LSD%20-%20Thunderclouds%20%20ft.%20Sia%2c%20Diplo%2c%20Labrinth.mp3')">Thunderlouds</button>
+<button onclick="change_song('Too Good at Goodbyes','http://tegos.ru/new/mp3_full/Sam_Smith_-_Too_Good_At_Goodbyes.mp3')">Too good at goodbyes</button>
+<button onclick="change_song('Shotgun','http://dl.muzix.net/2018/Pop/George%20Ezra/George%20Ezra%20-%20Shotgun/George%20Ezra%20-%20Shotgun%20-%20Muzix.net.mp3')">Shotgun</button>
+
+</body>
+</html>
